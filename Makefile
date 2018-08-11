@@ -24,7 +24,7 @@ remove:
 	@rm $(MANDIR)/man6/tetris.6.gz $(BINDIR)/tetris
 
 clean:
-	@rm *.o tetris
+	@rm tetris.o scores.o screen.o shapes.o input.o tetris
 
 .PHONY: config
 config:
