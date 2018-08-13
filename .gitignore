@@ -1,3 +1,6 @@
 tetris
 *.o
 tags
+tetris-bsd-*.tar.xz
+pkg/
+src/

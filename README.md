@@ -16,6 +16,11 @@ make
 sudo make install
 ```
 
+### Arch Linux
+
+This package provides a `PKGBUILD` file. You can install this package with
+`makepkg -si` on Arch Linux.
+
 Uninstallation
 --------------
 

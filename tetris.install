@@ -1,0 +1,4 @@
+post_install() {
+	touch /var/lib/tetris-bsd.scores
+	chmod 666 /var/lib/tetris-bsd.scores
+}
