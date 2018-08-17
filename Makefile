@@ -18,7 +18,7 @@ $(BINDIR)/tetris: tetris
 	@cp $< $@
 
 $(MANDIR)/man6/tetris.6.gz: tetris.6.in
-	@sed -e 's/@tetris_scorefile@/$(SCOREFILE)/g' $< | gzip > $@
+	@sed -e 's%@tetris_scorefile@%$(SCOREFILE)%g' $< | gzip > $@
 
 $(SCOREFILE):
 	@touch $(SCOREFILE)
@@ -42,7 +42,7 @@ $(PACKAGE)$(BINDIR)/tetris: tetris
 	@cp $< $@
 
 $(PACKAGE)$(MANDIR)/man6/tetris.6.gz: tetris.6.in
-	@sed -e 's/@tetris_scorefile/$(SCOREFILE)/g' $< | gzip > $@
+	@sed -e 's%@tetris_scorefile@%$(SCOREFILE)%g' $< | gzip > $@
 
 .PHONY: config
 config:
