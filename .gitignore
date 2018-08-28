@@ -1,6 +1,6 @@
-tetris
+tetris2
 *.o
 tags
-tetris-bsd-*.tar.xz
+tetris2-bsd-*.tar.xz
 pkg/
 src/

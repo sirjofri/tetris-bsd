@@ -9,15 +9,15 @@ RELRO= -Wl,-z,relro,-z,now
 CFLAGS= -g -O2 $(RELRO) -D_GNU_SOURCE -D_DEFAULT_SOURCE $(LIBS) $(FLAGS)
 CC= gcc
 
-all: config tetris
+all: config tetris2
 
-install: $(BINDIR)/tetris $(MANDIR)/man6/tetris.6.gz $(SCOREFILE)
+install: $(BINDIR)/tetris2 $(MANDIR)/man6/tetris2.6.gz $(SCOREFILE)
 	@echo " → Installed package"
 
-$(BINDIR)/tetris: tetris
+$(BINDIR)/tetris2: tetris2
 	@cp $< $@
 
-$(MANDIR)/man6/tetris.6.gz: tetris.6.in
+$(MANDIR)/man6/tetris2.6.gz: tetris.6.in
 	@sed -e 's%@tetris_scorefile@%$(SCOREFILE)%g' $< | gzip > $@
 
 $(SCOREFILE):
@@ -26,28 +26,28 @@ $(SCOREFILE):
 
 uninstall: remove
 remove:
-	@rm $(MANDIR)/man6/tetris.6.gz $(BINDIR)/tetris
+	@rm $(MANDIR)/man6/tetris2.6.gz $(BINDIR)/tetris2
 
 clean:
-	- @rm tetris.o scores.o screen.o shapes.o input.o tetris $(HIDEOUT)
+	- @rm tetris.o scores.o screen.o shapes.o input.o tetris2 $(HIDEOUT)
 	- @rm -Rf pkg src $(HIDEOUT)
 
-package: pkgdirs $(PACKAGE)$(BINDIR)/tetris $(PACKAGE)$(MANDIR)/man6/tetris.6.gz
+package: pkgdirs $(PACKAGE)$(BINDIR)/tetris2 $(PACKAGE)$(MANDIR)/man6/tetris2.6.gz
 
 pkgdirs:
 	@mkdir -p $(PACKAGE)$(BINDIR)
 	@mkdir -p $(PACKAGE)$(MANDIR)/man6
 
-$(PACKAGE)$(BINDIR)/tetris: tetris
+$(PACKAGE)$(BINDIR)/tetris2: tetris2
 	@cp $< $@
 
-$(PACKAGE)$(MANDIR)/man6/tetris.6.gz: tetris.6.in
+$(PACKAGE)$(MANDIR)/man6/tetris2.6.gz: tetris.6.in
 	@sed -e 's%@tetris_scorefile@%$(SCOREFILE)%g' $< | gzip > $@
 
 .PHONY: config
 config:
 
-tetris: tetris.o scores.o screen.o shapes.o input.o
+tetris2: tetris.o scores.o screen.o shapes.o input.o
 	@$(CC) $(CFLAGS) -o $@ $^ $(HIDEOUT)
 	@echo " → $@ compiled"
 

@@ -1,5 +1,5 @@
 # This is where your scores are stored. Make sure you have access to this file!
-SCOREFILE=/var/lib/tetris-bsd.scores
+SCOREFILE=/var/lib/tetris2.scores
 
 # Path for direct install
 PREFIX= /usr/local

@@ -33,11 +33,11 @@
 .\"	@(#)tetris.6	8.1 (Berkeley) 5/31/93
 .\"
 .Dd May 31, 1993
-.Dt TETRIS 6
+.Dt TETRIS2 6
 .Os
 .Sh NAME
-.Nm tetris
-.Nd the game of tetris
+.Nm tetris2
+.Nd the game of tetris (second version)
 .Sh SYNOPSIS
 .Nm
 .Op Fl bfghps
@@ -85,7 +85,7 @@ argument must have the six keys in order, and, remember to quote any
 space or tab characters from the shell.
 For example:
 .sp
-.Dl "tetris -l 2 -k 'jkl pqd'"
+.Dl "tetris2 -l 2 -k 'jkl pqd'"
 .sp
 will play the default games, i.e. level 2 and with the default
 control keys.
@@ -167,4 +167,4 @@ Darren F. Provine.
 Code for previewing next shape added by Hubert Feyrer in 1999.
 .Pp
 Code for fast elision, bag support, ghosts and hold function added by Joel
-Fridolin Meyer (sirjofri) in 2018.
+Fridolin Meyer (sirjofri) in 2018. This makes version 2.

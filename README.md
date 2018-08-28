@@ -1,9 +1,13 @@
-tetris-bsd
-==========
+tetris-bsd 2.0
+==============
 
-This is an updated version of the original tetris-bsd. The code is a fork of
-[BSDGames](https://github.com/vattam/BSDGames), I extracted the tetris code,
-because I don't need the other games.
+This is an updated version 2.0 of the original tetris-bsd. The code is a fork
+of [BSDGames](https://github.com/vattam/BSDGames), I extracted the tetris
+code, because I don't need the other games.
+
+As of version 2.0 this package does _no longer_ conflict with the original
+bsdgames collection. Use `tetris2` for this updated tetris version or call
+`tetris` for the original version.
 
 Installation
 ------------
